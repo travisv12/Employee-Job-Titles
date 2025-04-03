@@ -27,8 +27,8 @@ public class TranslationController {
 
     @FXML
     public void initialize() {
-        languageCombo.getItems().addAll("en", "es");
-        languageCombo.setValue("en");
+        languageCombo.getItems().addAll("English", "Espanol", "Francais", "Deutsch");
+        languageCombo.setValue("English");
         languageCombo.setOnAction(e -> loadTranslations());
 
         keyColumn.setCellValueFactory(data -> data.getValue().keyProperty());
@@ -40,12 +40,26 @@ public class TranslationController {
         loadTranslations();
     }
 
+    private String getLanguageCode() {
+        String language = languageCombo.getValue();
+        if (language.equals("English")) {
+            return "en";
+        } else if (language.equals("Espanol")) {
+            return "es";
+        } else if (language.equals("Francais")) {
+            return "fr";
+        } else if (language.equals("Deutsch")) {
+            return "de";
+        }
+        return "";
+    }
+
     private void loadTranslations() {
-        translations.setAll(model.getTranslations(languageCombo.getValue()));
+        translations.setAll(model.getTranslations(getLanguageCode()));
     }
 
     private void addOrUpdateTranslation() {
-        model.addOrUpdateTranslation(keyField.getText(), valueField.getText(), languageCombo.getValue());
+        model.addOrUpdateTranslation(keyField.getText(), valueField.getText(), getLanguageCode());
         loadTranslations();
     }
 

@@ -2,7 +2,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TranslationController">
+<VBox spacing="20" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TranslationController">
     <Label text="Employee Job Titles by Trung Vu" />
     <ComboBox fx:id="languageCombo" />
     <TableView fx:id="tableView">
