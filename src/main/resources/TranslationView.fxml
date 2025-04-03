@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TranslationController">
+    <Label text="Employee Job Titles by Trung Vu" />
+    <ComboBox fx:id="languageCombo" />
+    <TableView fx:id="tableView">
+        <columns>
+            <TableColumn text="Key" fx:id="keyColumn" />
+            <TableColumn text="Translation" fx:id="valueColumn" />
+        </columns>
+    </TableView>
+    <TextField fx:id="keyField" promptText="Key" />
+    <TextField fx:id="valueField" promptText="Translation" />
+    <Button fx:id="addButton" text="Add/Update Translation" />
+</VBox>
+
